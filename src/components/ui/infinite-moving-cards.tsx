@@ -35,15 +35,16 @@ export const InfiniteMovingCards = ({
           scrollerRef.current.appendChild(duplicatedItem);
         }
       });
-      useEffect(() => {
-        addAnimation();
-      }, [addAnimation]);
-
       getDirection();
       getSpeed();
       setStart(true);
     }
   }
+
+  useEffect(() => {
+    addAnimation();
+  }, [addAnimation]);
+  
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
